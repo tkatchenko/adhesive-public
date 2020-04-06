@@ -1,0 +1,125 @@
+*:focus {
+  outline: none;
+}
+
+body, html {
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: serif;
+  font-size: 18px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.Translator {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.Notes {
+  position: relative;
+}
+
+.Notes__scale {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  transform-origin: center center;
+  pointer-events: none;
+}
+
+.Notes__translate {
+  will-change: transform;
+  pointer-events: auto;
+}
+
+.Notes__buttons {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 5px;
+}
+
+.Notes__button {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.Notes__zoom {
+  display: flex;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 5px;
+}
+
+.Notes__zoom-reset {
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.Note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  padding: 10px;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  cursor: grab;
+  will-change: top, left;
+}
+
+.Note__text {
+  width: 100%;
+  text-align: center;
+  cursor: text;
+}
+
+.Note:hover .Note__buttons {
+  display: flex;
+}
+
+.Note__buttons {
+  display: none;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.Note__buttons--hide .Note__buttons {
+  display: none;
+}
+
+.Note__button {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.Note__button--extra-padding {
+  padding: 5px 10px;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.top {
+  z-index: 1;
+}
+
+.grabbing {
+  cursor: grabbing;
+}
